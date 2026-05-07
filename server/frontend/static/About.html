@@ -1,68 +1,181 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <!-- Link the style sheet here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <style>
+        /* MG Qatar Style Palette */
+        :root {
+            --mg-red: #db0000;
+            --mg-black: #000000;
+            --mg-grey: #f4f4f4;
+        }
+
+        body {
+            font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #ffffff;
+            color: var(--mg-black);
+            margin: 0;
+        }
+
+        /* Navbar Refinement */
+        .navbar {
+            background-color: var(--mg-black) !important;
+            border-bottom: 4px solid var(--mg-red);
+            padding: 1rem 2rem;
+        }
+
+        .navbar-brand-text {
+            color: #fff;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .nav-link {
+            color: #fff !important;
+            text-transform: uppercase;
+            font-size: 0.9rem !important;
+            font-weight: 600;
+            margin-left: 20px;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--mg-red) !important;
+        }
+
+        /* Header Section */
+        .about-header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://www.mg-qa.com/custom/modules/wheels/img/bg-about.jpg'); /* Example background */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 10%;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .about-header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        /* Team Cards */
+        .team-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 0 5%;
+            flex-wrap: wrap;
+        }
+
+        .person-card {
+            border: none;
+            border-bottom: 5px solid transparent;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            background: var(--mg-grey);
+            text-align: center;
+        }
+
+        .person-card:hover {
+            border-bottom: 5px solid var(--mg-red);
+            transform: translateY(-10px);
+        }
+
+        .card-img-top {
+            filter: grayscale(100%);
+            transition: 0.3s;
+        }
+
+        .person-card:hover .card-img-top {
+            filter: grayscale(0%);
+        }
+
+        .title {
+            color: var(--mg-red);
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            font-weight: 600;
+            color: #666;
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+        }
+
+        .email-link {
+            color: var(--mg-black);
+            font-size: 0.8rem;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
 </head>
-<div>
-  <nav class="navbar navbar-expand-lg navbar-light" style="background-color:darkturquoise; height: 1in;">
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
     <div class="container-fluid">
-      <h2 style="padding-right: 5%;">Dealerships</h2>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" style="font-size: larger;" aria-current="page" href="/">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" style="font-size: larger;" href="/about">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" style="font-size: larger;" href="/contact">Contact Us</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  
-    <div class="card" style="width: 80%;margin: auto; margin-top:5%;">
-      <div class="banner" name="about-header">
-      <!-- Insert header information here -->
-      </div>
-      <div style="display: flex;flex-direction: row; margin:auto">
-      <div class="card" style="width: 30%;">
-        <img class="card-img-top" src="/static/person.png" alt="Card image">
-        <div class="card-body">
-          <p class="title">Person1</p>
-          <p>Person1 Title</p>
-          <p class="card-text">Some text that explains the person1 in about 2 short sentences</p>
-          <p>person1@example.com</p>
+        <a class="navbar-brand navbar-brand-text" href="#">Apex Motor Group</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link active" href="/about">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="/contact">Contact Us</a></li>
+            </ul>
         </div>
-      </div>
+    </div>
+</nav>
 
-      <div class="card" style="width: 30%;">
-        <img class="card-img-top" src="/static/person.png" alt="Card image">
-        <div class="card-body">
-          <p class="title">Person2</p>
-          <p>Person2 Title</p>
-          <p class="card-text">Some text that explains the person2 in about 2 short sentences</p>
-          <p>person2@example.com</p>
-        </div>
-      </div>
-
-      <div class="card" style="width: 30%;">
-        <img class="card-img-top" src="/static/person.png" alt="Card image">
-        <div class="card-body">
-          <p class="title">Person3</p>
-          <p>Person3 Title</p>
-          <p class="card-text">Some text that explains the person3 in about 2 short sentences</p>
-          <p>person3@example.com</p>
-        </div>
-      </div>
-    </div>
-    </div>
-    </div>
-    
+<div class="about-header">
+    <h1>About Us</h1>
+    <p>Welcome to Apex Motor Group, home to the finest automotive engineering in North America. We deliver performance, luxury, and heritage at the right price.</p>
 </div>
 
+<div class="team-container">
+    <!-- Person 1 -->
+    <div class="card person-card" style="width: 18rem;">
+        <img class="card-img-top" src="/static/person.png" alt="Julian Vane">
+        <div class="card-body">
+            <p class="title">Julian Vane</p>
+            <p class="subtitle">EXECUTIVE OWNER</p>
+            <p class="card-text">Julian combines strategic leadership with a commitment to excellence, redefining the standard for the modern car-buying experience.</p>
+            <a href="mailto:j.vane@apexmotors.com" class="email-link">j.vane@apexmotors.com</a>
+        </div>
+    </div>
+
+    <!-- Person 2 -->
+    <div class="card person-card" style="width: 18rem;">
+        <img class="card-img-top" src="/static/person.png" alt="Person 2">
+        <div class="card-body">
+            <p class="title">Sarah Chen</p>
+            <p class="subtitle">OPERATIONS DIRECTOR</p>
+            <p class="card-text">Sarah oversees our nationwide logistics, ensuring every vehicle meets our rigorous 150-point inspection before delivery.</p>
+            <a href="mailto:s.chen@apexmotors.com" class="email-link">s.chen@apexmotors.com</a>
+        </div>
+    </div>
+
+    <!-- Person 3 -->
+    <div class="card person-card" style="width: 18rem;">
+        <img class="card-img-top" src="/static/person.png" alt="Person 3">
+        <div class="card-body">
+            <p class="title">Marcus Reed</p>
+            <p class="subtitle">HEAD OF CLIENT RELATIONS</p>
+            <p class="card-text">With over 15 years in luxury retail, Marcus ensures that every customer receives a personalized, white-glove service.</p>
+            <a href="mailto:m.reed@apexmotors.com" class="email-link">m.reed@apexmotors.com</a>
+        </div>
+    </div>
+</div>
+
+</body>
 </html>
