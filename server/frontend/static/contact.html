@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/bootstrap.min.css">  
+    <style>
+        /* MG Qatar Style Palette */
+        :root {
+            --mg-red: #db0000;
+            --mg-black: #000000;
+            --mg-grey: #f4f4f4;
+        }
+    
+        body {
+            font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #ffffff;
+            color: var(--mg-black);
+            margin: 0;
+        }
+    
+        /* Navbar Consistency */
+        .navbar {
+            background-color: var(--mg-black) !important;
+            border-bottom: 4px solid var(--mg-red);
+            padding: 1rem 2rem;
+        }
+    
+        .navbar-brand-text {
+            color: #fff;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+    
+        .nav-link {
+            color: #fff !important;
+            text-transform: uppercase;
+            font-size: 0.9rem !important;
+            font-weight: 600;
+            margin-left: 20px;
+            transition: color 0.3s;
+        }
+    
+        .nav-link:hover, .nav-link.active {
+            color: var(--mg-red) !important;
+        }
+    
+        /* Contact Header */
+        .contact-header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://www.mg-qa.com/custom/modules/wheels/img/bg-contact.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 10%;
+            text-align: center;
+        }
+    
+        .contact-header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+    
+        /* Form & Info Layout */
+        .contact-container {
+            max-width: 1200px;
+            margin: 50px auto;
+            display: grid;
+            grid-template-columns: 1.2fr 1.8fr;
+            gap: 50px;
+            padding: 0 5%;
+        }
+    
+        .contact-info-panel {
+            background: var(--mg-grey);
+            padding: 40px;
+            border-left: 5px solid var(--mg-red);
+        }
+    
+        .info-item {
+            margin-bottom: 25px;
+        }
+    
+        .info-label {
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--mg-black);
+            font-size: 0.95rem;
+            margin-bottom: 2px;
+        }
+    
+        .info-detail a {
+            color: var(--mg-red);
+            font-size: 1.05rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .info-detail a:hover {
+            opacity: 0.7;
+        }
+
+        .info-detail p {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 0;
+        }
+    
+        /* Input Styling */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+    
+        .form-control {
+            border: 1px solid #ccc;
+            border-radius: 0; 
+            padding: 15px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+    
+        .form-control:focus {
+            border-color: var(--mg-red);
+            outline: none;
+            box-shadow: none;
+        }
+    
+        .btn-submit {
+            background-color: var(--mg-red);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: background 0.3s;
+            align-self: flex-start;
+        }
+    
+        .btn-submit:hover {
+            background-color: var(--mg-black);
+        }
+    
+        @media (max-width: 992px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand-text" href="/">Apex Motor Group</a>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/about">About Us</a></li>
+                <li class="nav-item"><a class="nav-link active" href="/contact">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="contact-header">
+    <h1>Get In Touch</h1>
+    <p>Connect with our national teams or visit our corporate offices.</p>
+</div>
+
+<div class="contact-container">
+    <div class="contact-info-panel">
+        <div class="info-item">
+            <p class="info-label">Contact Customer Service</p>
+            <div class="info-detail"><a href="mailto:support@bestcars.com">support@bestcars.com</a></div>
+        </div>
+
+        <div class="info-item">
+            <p class="info-label">Contact our National Advertising team</p>
+            <div class="info-detail"><a href="mailto:NationalSales@bestcars.com">NationalSales@bestcars.com</a></div>
+        </div>
+
+        <div class="info-item">
+            <p class="info-label">Contact our Public Relations team</p>
+            <div class="info-detail"><a href="mailto:PR@bestcars.com">PR@bestcars.com</a></div>
+        </div>
+
+        <div class="info-item">
+            <p class="info-label">Contact the bestcars.com offices</p>
+            <div class="info-detail"><p>312-611-1111</p></div>
+        </div>
+
+        <div class="info-item">
+            <p class="info-label">Become a bestcars.com car dealer</p>
+            <div class="info-detail"><a href="https://growwithbestcars.com" target="_blank">Visit growwithbestcars.com</a></div>
+        </div>
+    </div>
+
+    <div>
+        <form class="contact-form">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <input type="text" class="form-control" placeholder="FIRST NAME" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <input type="text" class="form-control" placeholder="LAST NAME" required>
+                </div>
+            </div>
+            <div class="mb-3">
+                <input type="email" class="form-control" placeholder="EMAIL ADDRESS" required>
+            </div>
+            <div class="mb-3">
+                <textarea class="form-control" rows="6" placeholder="YOUR MESSAGE"></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Send Inquiry</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
