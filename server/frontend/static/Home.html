@@ -121,9 +121,33 @@
     </style>
 
     <script>
-        const logout = async (e) => {
-            sessionStorage.removeItem("username");
-            window.location.reload();
+        const logout = async () => {
+            let logout_url = window.location.origin + "/djangoapp/logout";
+            
+            try {
+                const res = await fetch(logout_url, {
+                    method: "GET",
+                });
+
+                const json = await res.json();
+                
+                if (json) {
+                    let username = sessionStorage.getItem('username');
+                    
+                    // The alert MUST come before the reload to be visible
+                    alert("Logging out " + (username ? username : "user") + "...");
+                    
+                    sessionStorage.removeItem('username');
+                    
+                    // Redirect to home and refresh
+                    window.location.href = window.location.origin;
+                } else {
+                    alert("The user could not be logged out.");
+                }
+            } catch (error) {
+                console.error("Logout Error:", error);
+                alert("Error connecting to the server.");
+            }
         };
 
         let checkSession = () => {
@@ -157,8 +181,7 @@
                 <li class="nav-item"><a class="nav-link" href="/contact">Contact Us</a></li>
             </ul>
             <div class="d-flex align-items-center" id="loginlogout">
-                <!-- Session links injected here -->
-            </div>
+                </div>
         </div>
     </div>
 </nav>
@@ -168,7 +191,7 @@
         <img src="static/car_dealership.jpg" class="card-img-top" alt="Luxury Showroom">
         <div class="banner-content">
             <h5>Experience Innovation & Luxury</h5>
-            <p class="text-muted">Explore the widest selection of premium vehicles in North America.</p>
+            <p class="text-muted">Explore the widest selection of premium vehicles in Qatar.</p>
             <a href="/dealers" class="btn btn-mg">View Dealerships</a>
         </div>
     </div>
