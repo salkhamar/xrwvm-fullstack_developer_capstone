@@ -20,7 +20,8 @@ ALLOWED_HOSTS = [
 
 # CSRF_TRUSTED_ORIGINS must have the protocol but NO trailing slash
 CSRF_TRUSTED_ORIGINS = [
-    'https://salkhamar1-8000.theianext-0-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai'
+    'https://*.cognitiveclass.ai',
+    'https://*.proxy.cognitiveclass.ai',
 ]
 
 # Required for Admin login to work over the IBM proxy
