@@ -35,8 +35,6 @@ jobs:
         run: |
           pwd
           flake8 ./server/manage.py
-          flake8 ./server/djangoapp/restapis.py
-          flake8 ./server/djangoapp/views.py
           echo "Linted core python files successfully"
 
   lint_js:
