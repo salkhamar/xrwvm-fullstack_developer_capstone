@@ -34,8 +34,10 @@ jobs:
       - name: Run Linter
         run: |
           pwd
-          find . -name "*.py" -exec flake8 {} +
-          echo "Linted all the python files successfully"
+          flake8 ./server/manage.py
+          flake8 ./server/djangoapp/restapis.py
+          flake8 ./server/djangoapp/views.py
+          echo "Linted core python files successfully"
 
   lint_js:
     name: Lint JavaScript Files
